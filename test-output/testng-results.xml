@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-12-01T14:32:40 IST" name="Default suite" finished-at="2024-12-01T14:33:23 IST" duration-ms="43074">
+    <groups>
+    </groups>
+    <test started-at="2024-12-01T14:32:40 IST" name="Default test" finished-at="2024-12-01T14:33:23 IST" duration-ms="43074">
+      <class name="DataDriven.Json$JSON_fillForm">
+        <test-method is-config="true" signature="StartAppiumAndInvokeApp()[pri:0, instance:DataDriven.Json$JSON_fillForm@6bbe85a8]" started-at="2024-12-01T14:32:40 IST" name="StartAppiumAndInvokeApp" finished-at="2024-12-01T14:32:57 IST" duration-ms="17407" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StartAppiumAndInvokeApp -->
+        <test-method signature="fillForm1(java.util.HashMap)[pri:0, instance:DataDriven.Json$JSON_fillForm@6bbe85a8]" started-at="2024-12-01T14:32:58 IST" name="fillForm1" data-provider="getJSONData" finished-at="2024-12-01T14:33:15 IST" duration-ms="17399" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Praveen, country=Austria, gender=Male}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillForm1 -->
+        <test-method signature="fillForm1(java.util.HashMap)[pri:0, instance:DataDriven.Json$JSON_fillForm@6bbe85a8]" started-at="2024-12-01T14:33:15 IST" name="fillForm1" data-provider="getJSONData" finished-at="2024-12-01T14:33:22 IST" duration-ms="7458" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{name=Pandaaaa, country=Bahamas, gender=Female}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillForm1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:DataDriven.Json$JSON_fillForm@6bbe85a8]" started-at="2024-12-01T14:33:22 IST" name="tearDown" finished-at="2024-12-01T14:33:23 IST" duration-ms="612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- DataDriven.Json$JSON_fillForm -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
