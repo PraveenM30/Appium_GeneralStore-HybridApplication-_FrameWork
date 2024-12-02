@@ -5,7 +5,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import org.Appium.RahulShetty.Utils.BaseClass;
+import org.Appium.Utils.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

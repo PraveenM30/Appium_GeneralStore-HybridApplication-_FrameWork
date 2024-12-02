@@ -5,10 +5,10 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import org.Appium.RahulShetty.Utils.BaseClass;
-import org.Appium.RahulShetty.pageObjects.android.Cart;
-import org.Appium.RahulShetty.pageObjects.android.formPage;
-import org.Appium.RahulShetty.pageObjects.android.productCatalogue;
+import org.Appium.Utils.BaseClass;
+import org.Appium.pageObjects.Cart;
+import org.Appium.pageObjects.formPage;
+import org.Appium.pageObjects.productCatalogue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -37,8 +37,8 @@ public class eCommerce_TC4_SumOfTwoProduct extends BaseClass {
 		productCatalogue.AddItemToCartByIndex(0);
 		Cart cart=productCatalogue.CartIcon();
 		cart.waitTillVisibilityOfWebElement(cart.cartTitleBar);
-		//wait.until(ExpectedConditions.attributeContains(By.id("com.androidsample.generalstore:id/toolbar_title"), "text", "Cart"));
-		productCatalogue.waitTillVisibilityOfWebElement("com.androidsample.generalstore:id/toolbar_title", "text", "Cart");
+		wait.until(ExpectedConditions.attributeContains(By.id("com.androidsample.generalstore:id/toolbar_title"), "text", "Cart"));
+		//productCatalogue.waitTillVisibilityOfWebElement("com.androidsample.generalstore:id/toolbar_title", "text", "Cart");
 		double finalPrice=cart.getproductSum();
 		double totalSum=cart.getTotalAmountDisplay();
 		Assert.assertEquals(finalPrice, totalSum);

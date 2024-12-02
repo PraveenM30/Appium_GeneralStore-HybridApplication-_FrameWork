@@ -1,8 +1,8 @@
-package org.Appium.RahulShetty.pageObjects.android;
+package org.Appium.pageObjects;
 
 import java.util.List;
 
-import org.Appium.RahulShetty.Utils.AndroidActions;
+import org.Appium.Utils.AndroidActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;

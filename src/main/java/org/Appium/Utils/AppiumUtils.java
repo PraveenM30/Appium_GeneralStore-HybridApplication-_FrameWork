@@ -1,4 +1,4 @@
-package org.Appium.RahulShetty.Utils;
+package org.Appium.Utils;
 
 import java.time.Duration;
 

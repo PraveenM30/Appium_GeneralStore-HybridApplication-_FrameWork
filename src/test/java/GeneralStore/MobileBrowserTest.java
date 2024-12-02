@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class MobileBrowserTest extends org.Appium.RahulShetty.Utils.MobileBrowserBaseClass {
+public class MobileBrowserTest extends org.Appium.Utils.MobileBrowserBaseClass {
 	@Test
 public void MobileBrowser() throws MalformedURLException {
 	StartAppiumAndInvokeApp();

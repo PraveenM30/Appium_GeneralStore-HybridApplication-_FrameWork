@@ -2,8 +2,8 @@ package GeneralStore;
 
 import java.net.MalformedURLException;
 
-import org.Appium.RahulShetty.Utils.BaseClass;
-import org.Appium.RahulShetty.pageObjects.android.formPage;
+import org.Appium.Utils.BaseClass;
+import org.Appium.pageObjects.formPage;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 

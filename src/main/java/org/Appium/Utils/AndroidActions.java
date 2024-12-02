@@ -1,4 +1,4 @@
-package org.Appium.RahulShetty.Utils;
+package org.Appium.Utils;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;

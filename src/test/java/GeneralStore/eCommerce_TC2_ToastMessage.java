@@ -2,8 +2,8 @@ package GeneralStore;
 
 import java.net.MalformedURLException;
 
-import org.Appium.RahulShetty.Utils.BaseClass;
-import org.Appium.RahulShetty.pageObjects.android.formPage;
+import org.Appium.Utils.BaseClass;
+import org.Appium.pageObjects.formPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,17 +24,17 @@ public class eCommerce_TC2_ToastMessage extends BaseClass {
 		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
 		String toastMsg = driver.findElement(By.xpath("(//android.widget.Toast)[1]")).getAttribute("name");
 		Thread.sleep(2000);
-		Assert.assertEquals(toastMsg, "Please enter your name");
+		Assert.assertEquals(toastMsg, "Please your name");// it will fail
 	}
 
-	@Test
-	public void fillFormPositive() throws MalformedURLException, InterruptedException {
-
-		formPage form = new formPage(driver);
-		form.Selectcountry("Australia");
-		form.setName("Panda");
-		form.submitForm();
-
-		Thread.sleep(2000);
-	}
+//	@Test
+//	public void fillFormPositive() throws MalformedURLException, InterruptedException {
+//
+//		formPage form = new formPage(driver);
+//		form.Selectcountry("Australia");
+//		form.setName("Panda");
+//		form.submitForm();
+//
+//		Thread.sleep(2000);
+//	}
 }

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DataDriven.Json$JSON_fillForm">
+      <class name="GeneralStore.eCommerce_TC2_ToastMessage">
         <methods>
-          <include name="StartAppiumAndInvokeApp"/>
+          <include name="FillFormNegative"/>
           <include name="tearDown"/>
-          <include name="fillForm1"/>
+          <include name="StartAppiumAndInvokeApp"/>
         </methods>
-      </class> <!-- DataDriven.Json$JSON_fillForm -->
+      </class> <!-- GeneralStore.eCommerce_TC2_ToastMessage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

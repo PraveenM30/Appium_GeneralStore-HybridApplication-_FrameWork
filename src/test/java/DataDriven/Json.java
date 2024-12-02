@@ -3,9 +3,9 @@ package DataDriven;
 import java.net.MalformedURLException;
 import java.util.HashMap;
 
-import org.Appium.RahulShetty.Utils.BaseClass;
-import org.Appium.RahulShetty.Utils.MobileBrowserBaseClass;
-import org.Appium.RahulShetty.pageObjects.android.formPage;
+import org.Appium.Utils.BaseClass;
+import org.Appium.Utils.MobileBrowserBaseClass;
+import org.Appium.pageObjects.formPage;
 import org.testng.annotations.Test;
 
 public class Json {

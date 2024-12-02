@@ -1,18 +1,19 @@
-package org.Appium.RahulShetty.Utils;
+package org.Appium.Utils;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.http.WebSocket;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -27,20 +28,12 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class BaseClass {
+public class MobileBrowserBaseClass {
 	private AppiumDriverLocalService service;
 	public AndroidDriver driver;
-	
-	@BeforeClass
-	public void StartAppiumAndInvokeApp() throws IOException {
-		Properties prop=new Properties();
-		FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\org\\TestData\\data.properties");
-		prop.load(fis);
-		String ipAddress=prop.getProperty("ipAddress");
-		String port=prop.getProperty("port");
-		String deviceUDID=prop.getProperty("deviceUDID");
-		String platformName=prop.getProperty("platformName");
 
+	@BeforeClass
+	public void StartAppiumAndInvokeApp() throws MalformedURLException {
 
 //	AppiumDriverLocalService service = new AppiumServiceBuilder()
 //			.withAppiumJS(
@@ -50,8 +43,8 @@ public class BaseClass {
 
 		try {
 			AppiumServiceBuilder builder = new AppiumServiceBuilder();
-			builder.withIPAddress(ipAddress);
-			builder.usingPort(Integer.parseInt(port));
+			builder.withIPAddress("127.0.0.1");
+			builder.usingPort(4723);
 			builder.withArgument(() -> "--base-path", "/wd/hub");
 			service = AppiumDriverLocalService.buildService(builder);
 			service.start();
@@ -70,15 +63,20 @@ public class BaseClass {
 //	capabilities.setCapability("deviceName", "Pixel8");
 //	capabilities.setCapability("platformName", "Android");
 //	capabilities.setCapability("automationName", "uiautomator2"); // Set the automation engine to uiautomator2
-//	capabilities.setCapability("", "Android");
+//	capabilities.setCapability("platformName", "Android");
+//	capabilities.setCapability("browserName", "Chrome");
+
 //	capabilities.setCapability("app",
 //			"C:\\Users\\user\\eclipse-workspace\\Appium_RahulShetty1\\resources\\ApiDemos-debug.apk");
 
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setPlatformName(platformName);
-		// options.setDeviceName("Pixel8");
-		options.setUdid(deviceUDID);
-		options.setApp("C:\\Users\\user\\eclipse-workspace\\AppiumRahulShetty_FrameWork\\org.resources\\General-Store.apk");
+		options.setPlatformName("Android");
+		//options.setChromedriverExecutable("C:\\Users\\user\\AppData\\Local\\Programs\\Appium Server GUI\\resources\\app\\node_modules\\appium\\node_modules\\appium-chromedriver\\chromedriver\\win");
+		//options.setDeviceName("Pixel8");
+		options.setUdid("RZ8W1077NCV");
+		options.setCapability("browserName", "Chrome");
+		//options.setApp("C:\\Users\\user\\eclipse-workspace\\Appium_RahulShetty1\\resources\\ApiDemos-debug.apk");
+		//options.setApp("C:\\Users\\user\\eclipse-workspace\\Appium_RahulShetty1\\resources\\General-Store.apk");
 
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -89,31 +87,6 @@ public class BaseClass {
 		driver.quit();
 		service.stop();
 	}
-
-	public void longPress(WebElement ele) {
-		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
-				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "duration", 2000));
-	}
-
-	public void ScrollTillEnd() {
-		boolean canScrollMore;
-		do {
-			canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap
-					.of("left", 100, "top", 100, "width", 200, "height", 200, "direction", "down", "percent", 1.0));
-
-		} while (canScrollMore);
-	}
-
-	public void swipe(WebElement ele, String direction) {
-		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId",
-				((RemoteWebElement) ele).getId(), "direction", direction, "percent", 0.25));
-	}
-
-	public void dragByCoOrdinate(WebElement ele, int x, int y) {
-		((JavascriptExecutor) driver).executeScript("mobile: dragGesture",
-				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "endX", x, "endY", y));
-	}
-
 	@DataProvider
 	public Object[][] getData() {
 		return new Object[][] { { "Australia", "Panda", "Female" }, { "Bahamas", "Pandaaaaaa", "Male" } };

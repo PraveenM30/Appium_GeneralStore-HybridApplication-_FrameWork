@@ -1,8 +1,8 @@
-package org.Appium.RahulShetty.pageObjects.android;
+package org.Appium.pageObjects;
 
 import java.time.Duration;
 
-import org.Appium.RahulShetty.Utils.AndroidActions;
+import org.Appium.Utils.AndroidActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -22,7 +22,7 @@ public class formPage extends AndroidActions {
 	AndroidDriver driver;
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 
-	public formPage(AndroidDriver driver) {
+	public formPage(AndroidDriver driver) {	
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);

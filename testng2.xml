@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite2">
 
 <listeners>
 <listener class-name="org.Appium.Utils.Listeners"></listener>
 </listeners>
 
-	<test thread-count="5" name="End to End">
-		<classes>
-			<class name="GeneralStore.eCommerce_TC4_SumOfTwoProduct" />
-		</classes>
-	</test> <!--
-	Test -->
 	<test thread-count="5" name="FillForm positive and negative">
 		<classes>
 			<class name="GeneralStore.eCommerce_TC2_ToastMessage" />

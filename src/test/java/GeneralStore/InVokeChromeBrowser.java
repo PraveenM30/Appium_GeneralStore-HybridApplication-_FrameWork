@@ -2,7 +2,7 @@ package GeneralStore;
 
 import java.net.MalformedURLException;
 
-import org.Appium.RahulShetty.Utils.MobileBrowserBaseClass;
+import org.Appium.Utils.MobileBrowserBaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;

@@ -3,7 +3,7 @@ package GeneralStore;
 import java.io.IOException;
 import java.time.Duration;
 
-import org.Appium.RahulShetty.Utils.BaseClass;
+import org.Appium.Utils.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
