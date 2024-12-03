@@ -4,14 +4,11 @@ import java.net.MalformedURLException;
 
 import org.Appium.Utils.BaseClass;
 import org.Appium.pageObjects.formPage;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
-import io.appium.java_client.AppiumBy;
 
 public class eCommerce_TC1_fillForm extends BaseClass{
 
-	@Test
+	@Test(groups ={"sanity"})
 	public void fillForm1() throws MalformedURLException, InterruptedException {
 		
 		

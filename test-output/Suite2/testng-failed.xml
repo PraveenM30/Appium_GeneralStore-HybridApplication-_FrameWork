@@ -4,15 +4,19 @@
   <listeners>
     <listener class-name="org.Appium.Utils.Listeners"/>
   </listeners>
-  <test thread-count="5" name="FillForm positive and negative(failed)">
+  <test thread-count="5" name="Added to cart(failed)">
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
     <classes>
-      <class name="GeneralStore.eCommerce_TC2_ToastMessage">
+      <class name="GeneralStore.eCommerce_TC3_AddToCart">
         <methods>
-          <include name="FillFormNegative"/>
-          <include name="tearDown"/>
           <include name="StartAppiumAndInvokeApp"/>
+          <include name="AddToCart"/>
         </methods>
-      </class> <!-- GeneralStore.eCommerce_TC2_ToastMessage -->
+      </class> <!-- GeneralStore.eCommerce_TC3_AddToCart -->
     </classes>
-  </test> <!-- FillForm positive and negative(failed) -->
+  </test> <!-- Added to cart(failed) -->
 </suite> <!-- Failed suite [Suite2] -->

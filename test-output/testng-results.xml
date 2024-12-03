@@ -2,29 +2,55 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-02T22:31:24 IST" name="Suite2" finished-at="2024-12-02T22:32:04 IST" duration-ms="40273">
+  <suite started-at="2024-12-03T09:00:48 IST" name="Default suite" finished-at="2024-12-03T09:01:49 IST" duration-ms="61491">
     <groups>
+      <group name="sanity">
+        <method signature="eCommerce_TC3_AddToCart.AddToCart()[pri:0, instance:GeneralStore.eCommerce_TC3_AddToCart@68c9133c]" name="AddToCart" class="GeneralStore.eCommerce_TC3_AddToCart"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2024-12-02T22:31:24 IST" name="FillForm positive and negative" finished-at="2024-12-02T22:32:04 IST" duration-ms="40273">
-      <class name="GeneralStore.eCommerce_TC2_ToastMessage">
-        <test-method is-config="true" signature="StartAppiumAndInvokeApp()[pri:0, instance:GeneralStore.eCommerce_TC2_ToastMessage@dbd8e44]" started-at="2024-12-02T22:31:24 IST" name="StartAppiumAndInvokeApp" finished-at="2024-12-02T22:31:47 IST" duration-ms="22711" status="PASS">
+    <test started-at="2024-12-03T09:00:48 IST" name="Default test" finished-at="2024-12-03T09:01:49 IST" duration-ms="61491">
+      <class name="GeneralStore.eCommerce_TC3_AddToCart">
+        <test-method is-config="true" signature="StartAppiumAndInvokeApp()[pri:0, instance:GeneralStore.eCommerce_TC3_AddToCart@68c9133c]" started-at="2024-12-03T09:00:48 IST" name="StartAppiumAndInvokeApp" finished-at="2024-12-03T09:01:12 IST" duration-ms="24166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StartAppiumAndInvokeApp -->
-        <test-method signature="FillFormNegative()[pri:0, instance:GeneralStore.eCommerce_TC2_ToastMessage@dbd8e44]" started-at="2024-12-02T22:31:47 IST" name="FillFormNegative" finished-at="2024-12-02T22:32:01 IST" duration-ms="14740" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="AddToCart()[pri:0, instance:GeneralStore.eCommerce_TC3_AddToCart@68c9133c]" started-at="2024-12-03T09:01:12 IST" name="AddToCart" finished-at="2024-12-03T09:01:49 IST" duration-ms="36408" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[expected [Please your name] but found [Please enter your name]]]>
+              <![CDATA[An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [7a076345-2384-4548-9d86-8d874350ba7d, findElement {value=new UiScrollable(new UiSelector()).scrollIntoView(text("Jordan 6 Rings"));, using=-android uiautomator}]
+Capabilities {appium:app: C:\Users\user\eclipse-works..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:\Users\user\eclipse-works..., automationName: UIAutomator2, platformName: ANDROID, udid: RZ8W1077NCV}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-M135FU, appium:deviceName: RZ8W1077NCV, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2408, appium:deviceUDID: RZ8W1077NCV, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: RZ8W1077NCV, appium:viewportRect: {height: 2342, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 7a076345-2384-4548-9d86-8d874350ba7d]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Please your name] but found [Please enter your name]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at GeneralStore.eCommerce_TC2_ToastMessage.FillFormNegative(eCommerce_TC2_ToastMessage.java:27)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [7a076345-2384-4548-9d86-8d874350ba7d, findElement {value=new UiScrollable(new UiSelector()).scrollIntoView(text("Jordan 6 Rings"));, using=-android uiautomator}]
+Capabilities {appium:app: C:\Users\user\eclipse-works..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:\Users\user\eclipse-works..., automationName: UIAutomator2, platformName: ANDROID, udid: RZ8W1077NCV}, appium:deviceApiLevel: 34, appium:deviceManufacturer: samsung, appium:deviceModel: SM-M135FU, appium:deviceName: RZ8W1077NCV, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2408, appium:deviceUDID: RZ8W1077NCV, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.8125, appium:platformVersion: 14, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: RZ8W1077NCV, appium:viewportRect: {height: 2342, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 7a076345-2384-4548-9d86-8d874350ba7d
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:237)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at GeneralStore.eCommerce_TC3_AddToCart.AddToCart(eCommerce_TC3_AddToCart.java:27)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,15 +81,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FillFormNegative -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:GeneralStore.eCommerce_TC2_ToastMessage@dbd8e44]" started-at="2024-12-02T22:32:03 IST" name="tearDown" finished-at="2024-12-02T22:32:04 IST" duration-ms="824" status="PASS">
+        </test-method> <!-- AddToCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:GeneralStore.eCommerce_TC3_AddToCart@68c9133c]" started-at="2024-12-03T09:01:49 IST" name="tearDown" finished-at="2024-12-03T09:01:49 IST" duration-ms="825" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- GeneralStore.eCommerce_TC2_ToastMessage -->
-    </test> <!-- FillForm positive and negative -->
-  </suite> <!-- Suite2 -->
+      </class> <!-- GeneralStore.eCommerce_TC3_AddToCart -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

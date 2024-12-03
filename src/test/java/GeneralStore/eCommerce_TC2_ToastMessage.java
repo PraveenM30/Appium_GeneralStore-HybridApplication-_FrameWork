@@ -24,17 +24,17 @@ public class eCommerce_TC2_ToastMessage extends BaseClass {
 		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
 		String toastMsg = driver.findElement(By.xpath("(//android.widget.Toast)[1]")).getAttribute("name");
 		Thread.sleep(2000);
-		Assert.assertEquals(toastMsg, "Please your name");// it will fail
+		Assert.assertEquals(toastMsg, "Please enter your name");// it will fail
 	}
 
-//	@Test
-//	public void fillFormPositive() throws MalformedURLException, InterruptedException {
-//
-//		formPage form = new formPage(driver);
-//		form.Selectcountry("Australia");
-//		form.setName("Panda");
-//		form.submitForm();
-//
-//		Thread.sleep(2000);
-//	}
+	@Test
+	public void fillFormPositive() throws MalformedURLException, InterruptedException {
+
+		formPage form = new formPage(driver);
+		form.Selectcountry("Australia");
+		form.setName("Panda");
+		form.submitForm();
+
+		Thread.sleep(2000);
+	}
 }

@@ -11,11 +11,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.appium.java_client.AppiumBy;
 
-public class eCommerce_TC3_AddToCart extends  BaseClass{
+public class eCommerce_TC3_AddToCart extends BaseClass {
 
-	@Test
+	@Test(groups ={"sanity"})
 	public void AddToCart() throws InterruptedException, IOException {
-		StartAppiumAndInvokeApp();
 
 		driver.findElement(By.id("com.androidsample.generalstore:id/spinnerCountry")).click();
 		driver.findElement(
@@ -41,8 +40,9 @@ public class eCommerce_TC3_AddToCart extends  BaseClass{
 			}
 		}
 		driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.attributeContains(By.id("com.androidsample.generalstore:id/toolbar_title"), "text", "Cart"));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.attributeContains(By.id("com.androidsample.generalstore:id/toolbar_title"),
+				"text", "Cart"));
 		String LastPageProduct = driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText();
 		Assert.assertEquals(LastPageProduct, "Jordan 6 Rings");
 		tearDown();

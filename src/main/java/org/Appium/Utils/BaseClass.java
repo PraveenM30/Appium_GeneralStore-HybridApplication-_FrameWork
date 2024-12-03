@@ -33,7 +33,7 @@ public class BaseClass {
 	private AppiumDriverLocalService service;
 	public AndroidDriver driver;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void StartAppiumAndInvokeApp() throws IOException {
 		Properties prop=new Properties();
 		FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\org\\TestData\\data.properties");
@@ -42,13 +42,6 @@ public class BaseClass {
 		String port=prop.getProperty("port");
 		String deviceUDID=prop.getProperty("deviceUDID");
 		String platformName=prop.getProperty("platformName");
-
-
-//	AppiumDriverLocalService service = new AppiumServiceBuilder()
-//			.withAppiumJS(
-//					new File("C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-//			.withIPAddress("127.0.0.1").usingPort(4723).build();
-//	service.start();
 
 		try {
 			AppiumServiceBuilder builder = new AppiumServiceBuilder();
@@ -68,15 +61,7 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 		
-
-//	DesiredCapabilities capabilities = new DesiredCapabilities();
-//	capabilities.setCapability("deviceName", "Pixel8");
-//	capabilities.setCapability("platformName", "Android");
-//	capabilities.setCapability("automationName", "uiautomator2"); // Set the automation engine to uiautomator2
-//	capabilities.setCapability("", "Android");
-//	capabilities.setCapability("app",
-//			"C:\\Users\\user\\eclipse-workspace\\Appium_RahulShetty1\\resources\\ApiDemos-debug.apk");
-
+		
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setPlatformName(platformName);
 		// options.setDeviceName("Pixel8");
