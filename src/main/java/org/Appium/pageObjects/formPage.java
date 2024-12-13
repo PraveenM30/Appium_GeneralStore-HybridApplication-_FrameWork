@@ -20,7 +20,6 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class formPage extends AndroidActions {
 
 	AndroidDriver driver;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 
 	public formPage(AndroidDriver driver) {	
 		super(driver);
@@ -51,8 +50,17 @@ public class formPage extends AndroidActions {
 
 	@AndroidFindBy(id = "com.androidsample.generalstore:id/appbar_btn_back")
 	private WebElement backButton;
+		
+	@AndroidFindBy(xpath = "(//android.widget.Toast)[1]")
+	private WebElement ToastMessage;
+	
+	public String ToastMessage() {
+		waitTillPresenceOfWebElement("(//android.widget.Toast)[1]");
+		return ToastMessage.getText();
+	}
 
 	public void backButton() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(backButton));
 		backButton.click();
 	}

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="GeneralStore.eCommerce_TC3_AddToCart">
+      <class name="GeneralStore.eCommerce_TC5_NavigateToCartNegative">
         <methods>
+          <include name="navigateToCart"/>
           <include name="tearDown"/>
-          <include name="AddToCart"/>
           <include name="StartAppiumAndInvokeApp"/>
         </methods>
-      </class> <!-- GeneralStore.eCommerce_TC3_AddToCart -->
+      </class> <!-- GeneralStore.eCommerce_TC5_NavigateToCartNegative -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

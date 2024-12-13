@@ -22,7 +22,7 @@ public class productCatalogue extends AndroidActions{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
-	@AndroidFindBy(xpath ="//android.widget.TextView[@text='ADD TO CART']")
+	@AndroidFindBy(id = "com.androidsample.generalstore:id/productAddCart")
 	private List<WebElement> AddToCart;
 	
 	public void AddItemToCartByIndex(int Index) {
@@ -32,11 +32,34 @@ public class productCatalogue extends AndroidActions{
 	@AndroidFindBy(id="com.androidsample.generalstore:id/appbar_btn_cart")
 	private WebElement CartIcon;
 	
-	public Cart CartIcon() {
+	public void CartIcon() {
 		CartIcon.click();
-		return new Cart(driver);
 	}
+	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='ADD TO CART']")
-	public WebElement AddToCar;
+	private WebElement AddToCar;
+	 
+	public void AddToCartText() {
+		AddToCar.isDisplayed();
+	}
+	
+	@AndroidFindBy(id ="com.androidsample.generalstore:id/productName")
+	public WebElement productss;
+	
+	@AndroidFindBy(id ="com.androidsample.generalstore:id/productName")
+	public List<WebElement> products;
+	
+	public int  getProductCount() {
+		return products.size();
+	}
+	
+	@AndroidFindBy(xpath = "(//android.widget.Toast)[1]")
+	private WebElement ToastMessage;
+	
+	public String ToastMessage() {
+		waitTillPresenceOfWebElement("(//android.widget.Toast)[1]");
+		return ToastMessage.getText();
+	}
+	
 	
 }

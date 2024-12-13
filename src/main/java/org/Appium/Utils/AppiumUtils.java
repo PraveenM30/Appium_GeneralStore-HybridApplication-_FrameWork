@@ -13,7 +13,6 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class AppiumUtils {
 	AppiumDriver driver;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
 	public AppiumUtils(AndroidDriver driver) {
 		this.driver = driver;
@@ -24,11 +23,19 @@ public class AppiumUtils {
 		return price;
 	}
 
+	// WaitTill
+	public void waitTillPresenceOfWebElement(String locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+	}
+
 	public void waitTillVisibilityOfWebElement(WebElement ele) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 
 	public void waitTillVisibilityOfWebElement(String locator, String Attribute, String text) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.attributeContains(By.id(locator), Attribute, text));
 	}
 

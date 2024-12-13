@@ -22,6 +22,17 @@ public class Cart extends AndroidActions {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
+	@AndroidFindBy(id = "com.androidsample.generalstore:id/toolbar_title")
+	private WebElement toolBarTitle;
+	
+	@AndroidFindBy(id = "com.androidsample.generalstore:id/productName")
+	public WebElement product;
+	
+	public String ProductName() {
+	String ProductName=product.getText();
+		return ProductName;
+	}
+
 	@AndroidFindBy(id = "com.androidsample.generalstore:id/productPrice")
 	private List<WebElement> productprice;
 
@@ -39,13 +50,17 @@ public class Cart extends AndroidActions {
 
 	@AndroidFindBy(id = "com.androidsample.generalstore:id/btnProceed")
 	private WebElement purchase;
-	
-	@AndroidFindBy(id="com.androidsample.generalstore:id/toolbar_title")
+
+	@AndroidFindBy(id = "com.androidsample.generalstore:id/toolbar_title")
 	public WebElement cartTitleBar;
-	
 
 	public List<WebElement> productList() {
 		return productprice;
+	}
+	
+	public void toolBarTitle() {
+		waitTillVisibilityOfWebElement(toolBarTitle);
+		toolBarTitle.isDisplayed();
 	}
 
 	public double getproductSum() {

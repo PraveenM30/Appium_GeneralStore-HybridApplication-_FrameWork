@@ -34,7 +34,6 @@ public class AndroidActions extends AppiumUtils {
 	public void scrollTillText(String text) {
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));"));
-
 	}
 
 	public void swipe(WebElement ele, String direction) {

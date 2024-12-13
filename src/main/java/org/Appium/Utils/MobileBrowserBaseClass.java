@@ -59,16 +59,6 @@ public class MobileBrowserBaseClass {
 			e.printStackTrace();
 		}
 
-//	DesiredCapabilities capabilities = new DesiredCapabilities();
-//	capabilities.setCapability("deviceName", "Pixel8");
-//	capabilities.setCapability("platformName", "Android");
-//	capabilities.setCapability("automationName", "uiautomator2"); // Set the automation engine to uiautomator2
-//	capabilities.setCapability("platformName", "Android");
-//	capabilities.setCapability("browserName", "Chrome");
-
-//	capabilities.setCapability("app",
-//			"C:\\Users\\user\\eclipse-workspace\\Appium_RahulShetty1\\resources\\ApiDemos-debug.apk");
-
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setPlatformName("Android");
 		//options.setChromedriverExecutable("C:\\Users\\user\\AppData\\Local\\Programs\\Appium Server GUI\\resources\\app\\node_modules\\appium\\node_modules\\appium-chromedriver\\chromedriver\\win");

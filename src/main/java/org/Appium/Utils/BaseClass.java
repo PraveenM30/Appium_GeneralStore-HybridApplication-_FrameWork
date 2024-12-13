@@ -79,30 +79,7 @@ public class BaseClass {
 		service.stop();
 	}
 
-	public void longPress(WebElement ele) {
-		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
-				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "duration", 2000));
-	}
-
-	public void ScrollTillEnd() {
-		boolean canScrollMore;
-		do {
-			canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap
-					.of("left", 100, "top", 100, "width", 200, "height", 200, "direction", "down", "percent", 1.0));
-
-		} while (canScrollMore);
-	}
-
-	public void swipe(WebElement ele, String direction) {
-		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId",
-				((RemoteWebElement) ele).getId(), "direction", direction, "percent", 0.25));
-	}
-
-	public void dragByCoOrdinate(WebElement ele, int x, int y) {
-		((JavascriptExecutor) driver).executeScript("mobile: dragGesture",
-				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "endX", x, "endY", y));
-	}
-
+	
 	@DataProvider
 	public Object[][] getData() {
 		return new Object[][] { { "Australia", "Panda", "Female" }, { "Bahamas", "Pandaaaaaa", "Male" } };
