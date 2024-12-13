@@ -2,6 +2,7 @@ package GeneralStore;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 
 import org.Appium.Utils.BaseClass;
 import org.Appium.pageObjects.Cart;
@@ -16,17 +17,17 @@ import io.appium.java_client.AppiumBy;
 
 public class eCommerce_TC5_AddToCart extends BaseClass {
 
-	@Test(groups = { "sanity" })
-	public void AddToCart() throws InterruptedException, IOException {
+	@Test(groups = { "sanity" }, dataProvider = "getJSONData")
+	public void AddToCart(HashMap<String, String> input) throws InterruptedException, IOException {
 
 		formPage form = new formPage(driver);
-		form.Selectcountry("Australia");
-		form.setName("Panda");
-		form.gender("Female");
+		form.Selectcountry(input.get("country"));
+		form.setName(input.get("name"));
+		form.gender(input.get("gender"));
 		form.submitForm();
 		productCatalogue catalogue = new productCatalogue(driver);
 		catalogue.AddToCartText();
-		catalogue.scrollTillText("Jordan Lift Off");
+		catalogue.scrollTillText(input.get("productName"));
 		// to get product count
 		int productCount = catalogue.getProductCount();
 		// iterate to all product and get text of it.
@@ -34,7 +35,7 @@ public class eCommerce_TC5_AddToCart extends BaseClass {
 		// button.
 		for (int i = 0; i < productCount; i++) {
 			String productName = catalogue.products.get(i).getText();
-			if (productName.equalsIgnoreCase("Jordan Lift Off")) {
+			if (productName.equalsIgnoreCase(input.get("productName"))) {
 				catalogue.AddItemToCartByIndex(i);
 			}
 		}
@@ -43,6 +44,6 @@ public class eCommerce_TC5_AddToCart extends BaseClass {
 		Cart cart = new Cart(driver);
 		cart.toolBarTitle();
 		String SelectedProduct = cart.ProductName();
-		Assert.assertEquals(SelectedProduct, "Jordan Lift Off");
+		Assert.assertEquals(SelectedProduct, input.get("productName"));
 	}
 }

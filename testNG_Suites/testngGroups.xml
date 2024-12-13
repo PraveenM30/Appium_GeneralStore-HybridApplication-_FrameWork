@@ -6,20 +6,12 @@
 			<include name="sanity"></include>
 		</run>
 	</groups>
+	
 
-	<listeners>
-		<listener class-name="org.Appium.Utils.Listeners"></listener>
-	</listeners>
-
-	<test thread-count="5" name="FillForm positive and negative">
-		<classes>
-			<class name="GeneralStore.eCommerce_TC1_fillForm" />
-		</classes>
-	</test>
-	<test thread-count="5" name="Added to cart">
-		<classes>
-			<class name="GeneralStore.eCommerce_TC3_AddToCart" />
-		</classes>
+	<test thread-count="5" name="Sanity Test Cases">
+		 <packages>
+            <package name="GeneralStore" />
+        </packages>
 	</test>
 
 </suite>

@@ -2,6 +2,7 @@ package GeneralStore;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -22,15 +23,15 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class eCommerce_TC6_SumOfTwoProduct extends BaseClass {
 
-	@Test
-	public void AddToCart() throws InterruptedException, MalformedURLException {
+	@Test(dataProvider = "getJSONData")
+	public void SumOfTwoProduct(HashMap<String, String>input) throws InterruptedException, MalformedURLException {
 
 		formPage form = new formPage(driver);
-		form.Selectcountry("Australia");
-		form.setName("Panda");
-		form.gender("Female");
+		form.Selectcountry(input.get("country"));
+		form.setName(input.get("name"));
+		form.gender(input.get("gender"));
 		form.submitForm();
-		
+
 		productCatalogue catalogue = new productCatalogue(driver);
 		catalogue.AddToCartText();
 		catalogue.AddItemToCartByIndex(0);
@@ -39,12 +40,13 @@ public class eCommerce_TC6_SumOfTwoProduct extends BaseClass {
 
 		Cart cart = new Cart(driver);
 		cart.toolBarTitle();
-		double finalPrice=cart.getproductSum();
-		double totalSum=cart.getTotalAmountDisplay();
+		double finalPrice = cart.getproductSum();
+		double totalSum = cart.getTotalAmountDisplay();
 		Assert.assertEquals(finalPrice, totalSum);
 		cart.longpress();
 		cart.checkbox();
 		cart.purchase();
-		Thread.sleep(5000);
-			}
+		long sleepTime = Long.parseLong(input.get("ThreadSleep"));
+		Thread.sleep(sleepTime);
+	}
 }

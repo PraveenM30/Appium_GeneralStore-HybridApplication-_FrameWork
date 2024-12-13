@@ -1,10 +1,12 @@
 [
 	{"country":"Austria",
 	"name":"Praveen",
-	"gender":"Male"
-},
-	{"country":"Bahamas",
-	"name":"Pandaaaa",
-	"gender":"Female"
+	"gender":"Male",
+	"toastMessageInFormPage":"Please enter your name",
+	"lastCountry":"Zimbabwe",
+	"toastMessageInProductCataloguePage":"Please add some product at first",
+	"productName":"Jordan Lift Off",
+	"ExplicitTime":"10",
+	"ThreadSleep":"5000"
 }
 ]

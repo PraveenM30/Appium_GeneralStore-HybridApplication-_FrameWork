@@ -60,8 +60,7 @@ public class formPage extends AndroidActions {
 	}
 
 	public void backButton() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOf(backButton));
+		waitTillVisibilityOfWebElement(backButton);
 		backButton.click();
 	}
 
