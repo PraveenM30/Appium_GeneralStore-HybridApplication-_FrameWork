@@ -71,7 +71,7 @@
 							<version>3.5.2</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testNG_Suites/testng2.xml</suiteXmlFile>
+									<suiteXmlFile>testNG_Suites/testngGroups.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>

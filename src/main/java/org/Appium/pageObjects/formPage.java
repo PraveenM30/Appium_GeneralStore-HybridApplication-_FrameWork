@@ -25,14 +25,17 @@ public class formPage extends AndroidActions {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-		// super will call its parent driver
-		/*
+		/* 
+		 * Its a parameterized constructor.
+		 * super>> will call its parent driver
+		
 		 * this.driver will get the life for driver from the test script driver(we
 		 * created constructor and and using this constructor in Test Script so when we
 		 * trigger that script, first this constructor will run and load all the element
 		 * which is in @AndroidFindBy)
-		 */
-		// initelement will load all our FindBy element to the driver
+		
+		 initelement will load all our FindBy element to the driver
+		  */
 	}
 
 	@AndroidFindBy(id = "com.androidsample.generalstore:id/spinnerCountry")
